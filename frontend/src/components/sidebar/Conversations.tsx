@@ -1,4 +1,3 @@
-import { DUMMY_CONVERSATIONS } from "../../dummy_data/dummy";
 import useGetConversations from "../../hooks/useGetConversations";
 import { getRandomEmoji } from "../../utils/emojis";
 import Conversation from "./Conversation";
