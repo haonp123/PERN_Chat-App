@@ -7,7 +7,7 @@ import SignUp from "./pages/SignUp";
 import { useAuthContext } from "./contexts/AuthContext";
 
 function App() {
-  const { authUser, setAuthUser, isLoading } = useAuthContext();
+  const { authUser } = useAuthContext();
 
   console.log(authUser);
 

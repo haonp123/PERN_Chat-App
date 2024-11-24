@@ -24,7 +24,7 @@ const SocketContextProvider = ({ children }: { children: ReactNode }) => {
   const socketRef = useRef<Socket | null>(null);
 
   const [onlineUsers, setOnlineUsers] = useState<string[]>([]);
-  const { authUser, isLoading } = useAuthContext(null);
+  const { authUser, isLoading } = useAuthContext();
 
   useEffect(() => {
     if (authUser && !isLoading) {
