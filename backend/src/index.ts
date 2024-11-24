@@ -4,8 +4,8 @@ import cookieParser from "cookie-parser";
 import path from "path";
 import { Request, Response } from "express";
 
-import authRoutes from "./routes/auth.route";
-import messageRoutes from "./routes/message.route";
+import authRoutes from "./routes/auth.route.ts";
+import messageRoutes from "./routes/message.route.ts";
 
 import { app, server } from "./socket/socket";
 
