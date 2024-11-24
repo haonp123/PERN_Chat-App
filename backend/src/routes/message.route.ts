@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.use(protectRoute);
 
-router.get("/users", getUsersToChat);
+router.get("/conversations", getUsersToChat);
 router.get("/:id", getConversation);
 router.post("/send/:id", sendMessage);
 

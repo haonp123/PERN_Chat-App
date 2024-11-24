@@ -1,13 +1,7 @@
 import { createContext, Dispatch, SetStateAction, useState, useEffect, useContext } from "react";
 import toast from "react-hot-toast";
 
-type AuthUserType = {
-  id: string;
-  fullName: string;
-  email: string;
-  profilePic: string;
-  gender: string;
-};
+import { AuthUserType } from "../types";
 
 const AuthContext = createContext<{
   authUser: AuthUserType | null;
@@ -33,7 +27,7 @@ export const AuthContextProvider = ({ children }: { children: React.ReactNode })
         const res = await fetch("/api/auth/me");
         const data = await res.json();
         if (!res.ok) {
-          throw new Error(data.message);
+          throw new Error(data.error);
         }
         setAuthUser(data);
       } catch (error: any) {
