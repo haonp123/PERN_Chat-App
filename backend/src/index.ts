@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import path from "path";
+import { Request, Response } from "express";
 
 import authRoutes from "./routes/auth.route";
 import messageRoutes from "./routes/message.route";
@@ -23,7 +24,7 @@ app.use("/api/messages", messageRoutes);
 
 if (process.env.NODE_ENV !== "development") {
   app.use(express.static(path.join(__dirname, "/frontend/dist")));
-  app.get("*", (req, res) => {
+  app.get("*", (req: Request, res: Response) => {
     res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
   });
 }
